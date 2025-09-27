@@ -116,7 +116,8 @@ export { sequelize, Example };
 
 ## Tables
 
-#### Articles
+### Articles
+**Model:** `Article`
 
 Main news article storage with metadata.
 
@@ -136,7 +137,8 @@ Main news article storage with metadata.
 | createdAt               | DATE     | NOT NULL                    | Timestamp                     |
 | updatedAt               | DATE     | NOT NULL                    | Timestamp                     |
 
-#### Users
+### Users
+**Model:** `User`
 
 System users for approval/review workflows.
 
@@ -150,7 +152,8 @@ System users for approval/review workflows.
 | createdAt | DATE    | NOT NULL                    | Timestamp              |
 | updatedAt | DATE    | NOT NULL                    | Timestamp              |
 
-#### States
+### States
+**Model:** `State`
 
 US geographic states for filtering.
 
@@ -162,7 +165,8 @@ US geographic states for filtering.
 | createdAt    | DATE    | NOT NULL                    | Timestamp               |
 | updatedAt    | DATE    | NOT NULL                    | Timestamp               |
 
-#### Reports
+### Reports
+**Model:** `Report`
 
 Client report generation and tracking.
 
@@ -176,7 +180,8 @@ Client report generation and tracking.
 | createdAt             | DATE    | NOT NULL                    | Timestamp                |
 | updatedAt             | DATE    | NOT NULL                    | Timestamp                |
 
-#### WebsiteDomains
+### WebsiteDomains
+**Model:** `WebsiteDomain`
 
 Website domains for news source filtering.
 
@@ -189,7 +194,8 @@ Website domains for news source filtering.
 | createdAt             | DATE    | NOT NULL                    | Timestamp                  |
 | updatedAt             | DATE    | NOT NULL                    | Timestamp                  |
 
-#### NewsApiRequests
+### NewsApiRequests
+**Model:** `NewsApiRequest`
 
 API request tracking for news aggregation services.
 
@@ -211,7 +217,8 @@ API request tracking for news aggregation services.
 | createdAt                           | DATE     | NOT NULL                    | Timestamp                        |
 | updatedAt                           | DATE     | NOT NULL                    | Timestamp                        |
 
-#### ArticleContent
+### ArticleContents
+**Model:** `ArticleContent`
 
 Full text content storage for articles.
 
@@ -223,7 +230,8 @@ Full text content storage for articles.
 | createdAt | DATE    | NOT NULL                    | Timestamp                 |
 | updatedAt | DATE    | NOT NULL                    | Timestamp                 |
 
-#### ArticleApproved
+### ArticleApproveds
+**Model:** `ArticleApproved`
 
 Article approval workflow tracking.
 
@@ -242,7 +250,8 @@ Article approval workflow tracking.
 | createdAt                   | DATE     | NOT NULL                    | Timestamp                   |
 | updatedAt                   | DATE     | NOT NULL                    | Timestamp                   |
 
-#### ArticleDuplicateAnalysis
+### ArticleDuplicateAnalyses
+**Model:** `ArticleDuplicateAnalysis`
 
 Tracks deduplication comparison outputs between a newly ingested article and an already approved article.
 
@@ -261,7 +270,8 @@ Tracks deduplication comparison outputs between a newly ingested article and an 
 | createdAt            | DATE    | NOT NULL                    | Timestamp                                            |
 | updatedAt            | DATE    | NOT NULL                    | Timestamp                                            |
 
-#### ArticleReviewed
+### ArticleRevieweds
+**Model:** `ArticleReviewed`
 
 Article review workflow tracking.
 
@@ -275,7 +285,8 @@ Article review workflow tracking.
 | createdAt  | DATE    | NOT NULL                    | Timestamp                |
 | updatedAt  | DATE    | NOT NULL                    | Timestamp                |
 
-#### ArticleIsRelevant
+### ArticleIsRelevants
+**Model:** `ArticleIsRelevant`
 
 Article relevance assessment tracking.
 
@@ -289,7 +300,8 @@ Article relevance assessment tracking.
 | createdAt  | DATE    | NOT NULL                    | Timestamp                   |
 | updatedAt  | DATE    | NOT NULL                    | Timestamp                   |
 
-#### EntityWhoFoundArticle
+### EntityWhoFoundArticles
+**Model:** `EntityWhoFoundArticle`
 
 Tracking entities that discover articles.
 
@@ -301,7 +313,8 @@ Tracking entities that discover articles.
 | createdAt                     | DATE    | NOT NULL                    | Timestamp                    |
 | updatedAt                     | DATE    | NOT NULL                    | Timestamp                    |
 
-#### EntityWhoCategorizedArticle
+### EntityWhoCategorizedArticles
+**Model:** `EntityWhoCategorizedArticle`
 
 Tracking entities that categorize articles.
 
@@ -313,7 +326,8 @@ Tracking entities that categorize articles.
 | createdAt                | DATE    | NOT NULL                    | Timestamp                  |
 | updatedAt                | DATE    | NOT NULL                    | Timestamp                  |
 
-#### ArtificialIntelligence
+### ArtificialIntelligences
+**Model:** `ArtificialIntelligence`
 
 AI models and systems configuration.
 
@@ -327,7 +341,8 @@ AI models and systems configuration.
 | createdAt            | DATE    | NOT NULL                    | Timestamp                   |
 | updatedAt            | DATE    | NOT NULL                    | Timestamp                   |
 
-#### NewsArticleAggregatorSource
+### NewsArticleAggregatorSources
+**Model:** `NewsArticleAggregatorSource`
 
 News source and aggregator configuration.
 
@@ -344,7 +359,8 @@ News source and aggregator configuration.
 
 ### Contract/Junction Tables
 
-#### ArticleStateContract
+### ArticleStateContracts
+**Model:** `ArticleStateContract`
 
 Many-to-many relationship between Articles and States.
 
@@ -356,7 +372,8 @@ Many-to-many relationship between Articles and States.
 | createdAt | DATE    | NOT NULL                    | Timestamp            |
 | updatedAt | DATE    | NOT NULL                    | Timestamp            |
 
-#### ArticleReportContract
+### ArticleReportContracts
+**Model:** `ArticleReportContract`
 
 Many-to-many relationship between Articles and Reports.
 
@@ -371,7 +388,8 @@ Many-to-many relationship between Articles and Reports.
 | createdAt                      | DATE    | NOT NULL                    | Timestamp                  |
 | updatedAt                      | DATE    | NOT NULL                    | Timestamp                  |
 
-#### ArticleEntityWhoCategorizedArticleContract
+### ArticleEntityWhoCategorizedArticleContracts
+**Model:** `ArticleEntityWhoCategorizedArticleContract`
 
 Links articles to categorization entities with keyword data.
 
@@ -387,7 +405,8 @@ Links articles to categorization entities with keyword data.
 
 _Note: Has unique index on (articleId, entityWhoCategorizesId, keyword)_
 
-#### NewsApiRequestWebsiteDomainContract
+### NewsApiRequestWebsiteDomainContracts
+**Model:** `NewsApiRequestWebsiteDomainContract`
 
 Links NewsAPI requests to website domains for filtering.
 
