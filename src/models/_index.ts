@@ -4,6 +4,10 @@ import { initArticle, Article } from "./Article";
 import { initArticleApproved, ArticleApproved } from "./ArticleApproved";
 import { initArticleContent, ArticleContent } from "./ArticleContent";
 import {
+	initArticleDuplicateAnalysis,
+	ArticleDuplicateAnalysis,
+} from "./ArticleDuplicateAnalysis";
+import {
 	initArticleEntityWhoCategorizedArticleContract,
 	ArticleEntityWhoCategorizedArticleContract,
 } from "./ArticleEntityWhoCategorizedArticleContract";
@@ -59,6 +63,7 @@ export function initModels() {
 	initArticle();
 	initArticleApproved();
 	initArticleContent();
+	initArticleDuplicateAnalysis();
 	initArticleEntityWhoCategorizedArticleContract();
 	initArticleIsRelevant();
 	initArticleKeywordContract();
@@ -86,6 +91,7 @@ export function initModels() {
 		Article,
 		ArticleApproved,
 		ArticleContent,
+		ArticleDuplicateAnalysis,
 		ArticleEntityWhoCategorizedArticleContract,
 		ArticleIsRelevant,
 		ArticleKeywordContract,
@@ -113,6 +119,7 @@ export {
 	Article,
 	ArticleApproved,
 	ArticleContent,
+	ArticleDuplicateAnalysis,
 	ArticleEntityWhoCategorizedArticleContract,
 	ArticleIsRelevant,
 	ArticleKeywordContract,

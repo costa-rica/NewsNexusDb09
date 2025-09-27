@@ -1,6 +1,7 @@
 import { Article } from "./Article";
 import { ArticleApproved } from "./ArticleApproved";
 import { ArticleContent } from "./ArticleContent";
+import { ArticleDuplicateAnalysis } from "./ArticleDuplicateAnalysis";
 import { ArticleEntityWhoCategorizedArticleContract } from "./ArticleEntityWhoCategorizedArticleContract";
 import { ArticleIsRelevant } from "./ArticleIsRelevant";
 import { ArticleKeywordContract } from "./ArticleKeywordContract";
@@ -109,6 +110,25 @@ export function applyAssociations(): void {
 
 	Article.hasMany(ArticleIsRelevant, { foreignKey: "articleId" });
 	ArticleIsRelevant.belongsTo(Article, { foreignKey: "articleId" });
+
+	// --- ArticleDuplicateAnalysis associations ---
+	Article.hasMany(ArticleDuplicateAnalysis, {
+		foreignKey: "articleIdNew",
+		as: "newArticleDuplicateAnalyses"
+	});
+	ArticleDuplicateAnalysis.belongsTo(Article, {
+		foreignKey: "articleIdNew",
+		as: "newArticle"
+	});
+
+	Article.hasMany(ArticleDuplicateAnalysis, {
+		foreignKey: "articleIdApproved",
+		as: "approvedArticleDuplicateAnalyses"
+	});
+	ArticleDuplicateAnalysis.belongsTo(Article, {
+		foreignKey: "articleIdApproved",
+		as: "approvedArticle"
+	});
 
 	// --- EntityWhoFoundArticle associations ---
 	EntityWhoFoundArticle.hasMany(Article, {
