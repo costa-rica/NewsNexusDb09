@@ -71,7 +71,7 @@ export function initArticleDuplicateAnalysis() {
 				type: DataTypes.INTEGER,
 			},
 			contentHash: {
-				type: DataTypes.INTEGER,
+				type: DataTypes.FLOAT,
 			},
 			embeddingSearch: {
 				type: DataTypes.FLOAT,
