@@ -5,6 +5,7 @@ interface ArticleDuplicateAnalysisAttributes {
 	id: number;
 	articleIdNew: number;
 	articleIdApproved: number;
+	reportId: number | null;
 	sameArticleIdFlag: number;
 	articleNewState: string;
 	articleApprovedState: string;
@@ -15,7 +16,7 @@ interface ArticleDuplicateAnalysisAttributes {
 }
 
 interface ArticleDuplicateAnalysisCreationAttributes
-	extends Optional<ArticleDuplicateAnalysisAttributes, "id"> {}
+	extends Optional<ArticleDuplicateAnalysisAttributes, "id" | "reportId"> {}
 
 export class ArticleDuplicateAnalysis
 	extends Model<
@@ -27,6 +28,7 @@ export class ArticleDuplicateAnalysis
 	public id!: number;
 	public articleIdNew!: number;
 	public articleIdApproved!: number;
+	public reportId!: number | null;
 	public sameArticleIdFlag!: number;
 	public articleNewState!: string;
 	public articleApprovedState!: string;
@@ -54,6 +56,10 @@ export function initArticleDuplicateAnalysis() {
 			articleIdApproved: {
 				type: DataTypes.INTEGER,
 				allowNull: false,
+			},
+			reportId: {
+				type: DataTypes.INTEGER,
+				allowNull: true,
 			},
 			sameArticleIdFlag: {
 				type: DataTypes.INTEGER,
